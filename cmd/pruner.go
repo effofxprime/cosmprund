@@ -245,8 +245,12 @@ func pruneAppState(home string) error {
 	} else if app == "elys" {
 		elysKeys := types.NewKVStoreKeys(
 			"feegrant", // feegrant.StoreKey,
-			"authz",    // authzkeeper.StoreKey,
+			//"authz",    // authzkeeper.StoreKey,
 			"wasm",     // wasm.StoreKey,
+			//"distribution", //distributiontypes.StoreKey
+			//"transfer",	// ibctransfertypes.StoreKey
+			//"evidence", //evidencetypes.StoreKey
+			//""
 			// Custom Modules
 			"amm",	//ammmoduletypes.StoreKey
 			"assetprofile",	//assetprofilemodulestypes.StoreKey
@@ -260,9 +264,8 @@ func pruneAppState(home string) error {
 			"tokenomics",	//tokenomicsmoduletypes.StoreKey
 			"icahost",	//icahosttypes.StoreKey,
 			"icacontroller",	//icacontrollertypes.StoreKey
-
+			"group",	//group.StoreKey
 		)
-
 		for key, value := range elysKeys {
 			keys[key] = value
 		} 
