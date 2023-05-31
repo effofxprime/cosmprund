@@ -241,6 +241,31 @@ func pruneAppState(home string) error {
 		for key, value := range sentinelKeys {
 			keys[key] = value
 		}
+		
+	} else if app == "elys" {
+		elysKeys := types.NewKVStoreKeys(
+			"feegrant", // feegrant.StoreKey,
+			"authz",    // authzkeeper.StoreKey,
+			"wasm",     // wasm.StoreKey,
+			// Custom Modules
+			"amm",	//ammmoduletypes.StoreKey
+			"assetprofile",	//assetprofilemodulestypes.StoreKey
+			"commitment",	//commitmentmoduletypes.StoreKey
+			"epochs",	//epochsmoduletypes.StoreKey
+			"burner",	//burnermoduletypes.StoreKey
+			"incentive",	//incentivemoduletypes.StoreKey
+			"liquidityprovider",	//liquidityprovidermoduletypes.StoreKey
+			"oracle",	//oracletypes.StoreKey
+			"parameter",	//parametermoduletypes.StoreKey
+			"tokenomics",	//tokenomicsmoduletypes.StoreKey
+			"icahost",	//icahosttypes.StoreKey,
+			"icacontroller",	//icacontrollertypes.StoreKey
+
+		)
+
+		for key, value := range elysKeys {
+			keys[key] = value
+		} 
 	} else if app == "emoney" {
 		emoneyKeys := types.NewKVStoreKeys(
 			"liquidityprovider", // lptypes.StoreKey,
