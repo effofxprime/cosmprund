@@ -246,7 +246,7 @@ func pruneAppState(home string) error {
 		elysKeys := types.NewKVStoreKeys(
 			"feegrant", // feegrant.StoreKey,
 			//"authz",    // authzkeeper.StoreKey,
-			"wasm",     // wasm.StoreKey,
+			//"wasm",     // wasm.StoreKey,
 			//"distribution", //distributiontypes.StoreKey
 			//"transfer",	// ibctransfertypes.StoreKey
 			//"evidence", //evidencetypes.StoreKey
